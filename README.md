@@ -5,13 +5,13 @@ And continue to add and update simple examples of plug-ins.
 
 ## Plugins
 
-[axios](https://axios-http.com/docs/intro): Promise based HTTP client for the browser and node.js.
-[pinia](https://pinia.vuejs.org/zh/introduction.html): Intuitive, type safe and flexible Store for Vue.
-[pinia-plugin-persist](https://seb-l.github.io/pinia-plugin-persist/#vue3): Persist VueJs Pinia state data in sessionStorage or other storages.
-[vant](https://vant-ui.github.io/vant/#/en-US): Mobile UI Components built on Vue.
-[vue-i18n](https://vue-i18n.intlify.dev/): Internationalization plugin for Vue.js.
-[vue-router](https://router.vuejs.org/installation.html): The official Router for Vue.js
-[postcss-pxtorem](https://github.com/cuth/postcss-pxtorem): A CSS post-processor that converts px to rem.
+[axios](https://axios-http.com/docs/intro): Promise based HTTP client for the browser and node.js.<br />
+[pinia](https://pinia.vuejs.org/zh/introduction.html): Intuitive, type safe and flexible Store for Vue.<br />
+[pinia-plugin-persist](https://seb-l.github.io/pinia-plugin-persist/#vue3): Persist VueJs Pinia state data in sessionStorage or other storages.<br />
+[vant](https://vant-ui.github.io/vant/#/en-US): Mobile UI Components built on Vue.<br />
+[vue-i18n](https://vue-i18n.intlify.dev/): Internationalization plugin for Vue.js.<br />
+[vue-router](https://router.vuejs.org/installation.html): The official Router for Vue.js.<br />
+[postcss-pxtorem](https://github.com/cuth/postcss-pxtorem): A CSS post-processor that converts px to rem.<br />
 [amfe-flexible]():Build flexible page on mobile platform.
 
 ## Recommended IDE Setup
