@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import HelloWord from '@/components/HelloWord.vue'
-
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
-
 import { storeToRefs } from 'pinia'
 import { useCounterStore } from '@/stores/counter'
+import { showToastFun, closeToastFun } from '@/utils/toast'
+import HelloWord from '@/components/HelloWord.vue'
+
+const { t } = useI18n()
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)
 
-import { showToastFun, closeToastFun } from '@/utils/toast'
-showToastFun(t('loading'), 'loading')
+showToastFun('loading')
 setTimeout(() => {
     closeToastFun()
 }, 1000)

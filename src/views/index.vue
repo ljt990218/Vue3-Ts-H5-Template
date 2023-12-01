@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import HelloWord from '@/components/HelloWord.vue'
-import { showDialog, showLoadingToast } from 'vant'
 import { chageLanguage } from '@/lang/vanti18n'
-
 import { useI18n } from 'vue-i18n'
-const { t, locale } = useI18n()
-
+import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useCounterStore } from '@/stores/counter'
+import HelloWord from '@/components/HelloWord.vue'
+
+const { t, locale } = useI18n()
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)
 
-import { useRouter } from 'vue-router'
 const router = useRouter()
 const goToAbout = () => {
     router.push('/about')
