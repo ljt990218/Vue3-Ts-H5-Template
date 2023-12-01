@@ -1,19 +1,22 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRouter, useRoute } from 'vue-router'
-import { storeToRefs } from 'pinia'
-import { useCounterStore } from '@/stores/counter'
 import HelloWord from '@/components/HelloWord.vue'
 
+import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
-const router = useRouter()
-const route = useRoute()
-
+import { storeToRefs } from 'pinia'
+import { useCounterStore } from '@/stores/counter'
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)
+
+import { showToastFun, closeToastFun } from '@/utils/toast'
+showToastFun(t('loading'), 'loading')
+setTimeout(() => {
+    closeToastFun()
+}, 1000)
 </script>
+
 <template>
     <HelloWord :msg="$t('helloWord')" />
 
@@ -35,6 +38,7 @@ const { count } = storeToRefs(counter)
         {{ t('goToHome') }}
     </van-button>
 </template>
+
 <style lang="scss" scoped>
 .title {
     font-size: 32px;

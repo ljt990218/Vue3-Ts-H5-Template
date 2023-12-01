@@ -1,37 +1,22 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
-import { storeToRefs } from 'pinia'
-import { useCounterStore } from '@/stores/counter'
 import HelloWord from '@/components/HelloWord.vue'
 import { showDialog, showLoadingToast } from 'vant'
 import { chageLanguage } from '@/lang/vanti18n'
 
+import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
 
+import { storeToRefs } from 'pinia'
+import { useCounterStore } from '@/stores/counter'
 const counter = useCounterStore()
 const { count } = storeToRefs(counter)
+
+import { useRouter } from 'vue-router'
 const router = useRouter()
 const goToAbout = () => {
     router.push('/about')
 }
-
-const showDialogFun = () => {
-    showDialog({
-        title: '标题',
-        message: '代码是写出来给人看的，附带能在机器上运行。',
-    }).then(() => {
-        console.log('on close')
-    })
-
-    // showLoadingToast({
-    //     message: '加载中...',
-    //     duration: 0,
-    //     forbidClick: true,
-    // })
-}
-// showDialogFun()
 
 // 切换语言
 const changeLang = () => {
@@ -90,4 +75,3 @@ const changeLang = () => {
     text-align: center;
 }
 </style>
-@/lang/vanti18n
