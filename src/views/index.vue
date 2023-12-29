@@ -6,6 +6,15 @@ import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useCounterStore } from '@/stores/counter'
 import HelloWord from '@/components/HelloWord.vue'
+import { useArrayFindIndex } from '@vueuse/core'
+
+const list = [ref(-1), ref(24), ref(8)]
+const positive = useArrayFindIndex(list, val => val > 0)
+console.log(positive.value)
+
+import { useWindowSize } from '@vueuse/core'
+const { width, height } = useWindowSize()
+console.log(width.value, height.value)
 
 const { t, locale } = useI18n()
 const counter = useCounterStore()
@@ -36,14 +45,7 @@ const changeLang = () => {
 
     <div class="flex_center_center">
         <div class="count">{{ t('count') }}: {{ count }}</div>
-        <van-button
-            style="margin-left: 20px"
-            type="primary"
-            size="small"
-            @click="counter.increment"
-        >
-            count ++
-        </van-button>
+        <van-button style="margin-left: 20px" type="primary" size="small" @click="counter.increment">count ++</van-button>
     </div>
 
     <van-button class="navBtn" type="primary" @click="goToAbout" :block="true">
